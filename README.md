@@ -1,7 +1,3 @@
-Okay, I will reformat the documentation with a line break after approximately 91 characters,
-while trying to maintain readability and markdown integrity. Code blocks will not be
-reformatted internally. The 
-markers will be removed.
 
 # Documentation: Search And Destroy  Script
 
@@ -84,11 +80,6 @@ The script's behavior is primarily controlled by variables defined at the beginn
 ```
 $BasisSuchordner =           "C:\user\root\s\"
 $AggregierterAusgabeordner = "C:\user\root\s\"
-
-
-
-
-Markdown
 
 
 $BasisSuchordner: (String) The root directory where the script will start
@@ -475,10 +466,6 @@ hardcoded. If you need more or less context, change 220 in this section:
 if ($_.Zeileninhalt.Length -gt 220) {
     $_.Zeileninhalt.Substring(0, 220) + '...'
 } # ...
-
-
-
-
 
 
 
