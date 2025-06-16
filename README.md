@@ -77,7 +77,6 @@ The script's behavior is primarily controlled by variables defined at the beginn
 
 ### 5.1. Core Paths
 
-```
 $BasisSuchordner =           "C:\user\root\s\"
 $AggregierterAusgabeordner = "C:\user\root\s\"
 
@@ -94,7 +93,7 @@ the script will attempt to create it.
 
 Example: If set to "C:\Reports\Search_Results\".
 
-5.2. Optional Folder Skipping
+### 5.2. Optional Folder Skipping
 [switch]$UeberspringeStandardOrdner = $true
 
 
@@ -114,7 +113,7 @@ out the line.
 The folders to skip ("tomcat", "logs") are hardcoded within the
 Start-DateiSuche function.
 
-5.3. Search Definitions ($Suchdefinitionen)
+## 5.3. Search Definitions ($Suchdefinitionen)
 
 This is the most critical part of the configuration. It's an array of hashtables, where
 each hashtable defines a specific search operation.
@@ -171,11 +170,11 @@ Example of a single search definition:
 To add a new search, simply add a new hashtable entry to the $Suchdefinitionen array
 following this structure.
 
-6. Script Workflow and Components
+# 6. Script Workflow and Components
 
 The script operates in two main parts:
 
-6.1. Part 1: Start-DateiSuche Function (Core Search Function)
+## 6.1. Part 1: Start-DateiSuche Function (Core Search Function)
 
 This function is the workhorse responsible for performing a single, defined search
 operation.
@@ -261,7 +260,7 @@ These objects are added to $ergebnisseZumExport.
 
 Return: Returns the array of PSCustomObject results.
 
-6.2. Part 2: Main Control Script and Aggregation
+## 6.2. Part 2: Main Control Script and Aggregation
 
 This part orchestrates the overall process.
 
@@ -334,7 +333,7 @@ displayed.
 
 Completion: Prints a script footer.
 
-7. Output
+# 7. Output
 
 The script produces several forms of output:
 
@@ -401,7 +400,7 @@ criteria like ColumnName:Value).
 
 Select and copy rows.
 
-8. How to Use
+# 8. How to Use
 
 Save the Script: Save the code as a .ps1 file (e.g., SearchAndDestroy.ps1).
 
@@ -438,7 +437,7 @@ Once completed, check the $AggregierterAusgabeordner for the generated CSV file.
 
 Interact with the Out-GridView window that appears to analyze the findings.
 
-9. Customization and Extension
+# 9. Customization and Extension
 
 Adding New Searches: The primary way to customize is by adding new hashtable entries
 to the $Suchdefinitionen array.
@@ -472,7 +471,7 @@ if ($_.Zeileninhalt.Length -gt 220) {
 Default File Types: The default extensions used in Start-DateiSuche if
 $FileTypes is not provided can be changed by editing $standardErweiterungen = @("*.ini", "*.txt", "*.lic", "*.log", "*.nfo", "*.opt").
 
-10. Important Notes and Considerations
+# 10. Important Notes and Considerations
 
 Performance: Searching through very large directories or a vast number of files can
 be time-consuming and resource-intensive. The script's performance will depend on disk
@@ -505,7 +504,7 @@ No Case Sensitivity by Default in Main Loop: As noted, the -CaseSensitive
 parameter of Start-DateiSuche is defined but not actively used by the main loop
 calling it. Select-String is case-insensitive by default.
 
-11. Troubleshooting
+# 11. Troubleshooting
 
 No Results Found:
 
